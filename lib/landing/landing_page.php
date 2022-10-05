@@ -26,7 +26,7 @@
   <label for="floatingPassword">Password</label>
   <div class="d-grid bt gap-2 col-10 mx-auto">
   <button class="btn btn-primary" type="button">Login </button>
-  <button class="btn btn-success" type="button">Login</button>
+  
 </div>
   </div>
     </div>
