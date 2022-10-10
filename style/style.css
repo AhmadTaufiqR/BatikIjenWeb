@@ -1,3 +1,6 @@
 body{
     background: linear-gradient(45deg, #D6D4D4, #90C5D6) !important;
 }
+section{
+    background: linear-gradient(45deg, #D6D4D4, #90C5D6) !important;
+}
