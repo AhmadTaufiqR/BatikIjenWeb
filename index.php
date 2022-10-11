@@ -3,7 +3,7 @@
 <head>
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <section class="h-100 gradient-form" style="linear-gradient(45deg, #D6D4D4, #90C5D6) !important; ">
@@ -38,12 +38,10 @@
                   </div>
 
                   <div class="text-center pt-1 mb-2 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
-                      in</button>
-                   
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" name="submit" >LOGIN </button>
                   </div>
                   <div class="text-center pt-1 mb-5 pb-2">
-                    <a class="text-muted" href="#!">Forgot password?</a>
+                    <a class="text-muted" href="#!"> <p><a href="lupapassword.php">Forgot password?</a>
                   </div>
                   <div class="form-footer mt-2">
                     <p> Sudah punya account? <a href="register.php">REGISTER</a></p>
