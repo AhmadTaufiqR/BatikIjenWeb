@@ -58,7 +58,7 @@
                             <button type="submit" class="btn btn-warning py-2">Register</button>
                     </div>
                    </form> 
-                       <p class="text-muted fz-13 text-center">Sudah Punya Akun?<a href="">Login</a></p>
+                       <p class="text-muted fz-13 text-center">Sudah Punya Akun?<a href="index.php"> Login</a></p>
                   </div>
                 </div>
               </div>  

@@ -17,7 +17,7 @@
 
                 <div class="text-center">
                   <img src="assets/logo1.png"
-                    style="width: 130px;">
+                    style="width: 185px;">
                   <h4 class="mt-1 mb-5 pb-1">Sanggar Batik</h4>
                 </div>
 
@@ -36,10 +36,9 @@
                     placeholder="Password"/>
                     
                   </div>
-
-                  <div class="text-center pt-1 mb-2 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" name="submit" >LOGIN </button>
-                  </div>
+                  <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-warning py-2">Register</button>
+                    </div>
                   <div class="text-center pt-1 mb-5 pb-2">
                     <a class="text-muted" href="#!"> <p><a href="lupapassword.php">Forgot password?</a>
                   </div>
@@ -56,10 +55,11 @@
               <div class="text-center">
                   <!-- <img src="assets/logo2.png"
                     style="width: 185px;" alt="logo"> -->
-                  <h4 class="mt-1 mb-3 pb-1"></h4>
+                  <h4 class="mt-1 mb-3 pb-1">Jadilah Penjual Terbaik !</h4>
                 </div>
-                <p class="small mb-0"></p>
+                <p class="small mb-0">Kelola  Sanggar batik anda di  website kami !</p>
               </div>
+            
             </div>
           </div>
         </div>
