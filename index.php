@@ -16,9 +16,9 @@
               <div class="card-body p-md-5 mx-md-4">
 
                 <div class="text-center">
-                  <img src="assets/logo.png"
-                    style="width: 185px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">Ijen Batik Bondowoso</h4>
+                  <img src="assets/logo1.png"
+                    style="width: 130px;">
+                  <h4 class="mt-1 mb-5 pb-1">Sanggar Batik</h4>
                 </div>
 
                 <form>
@@ -56,11 +56,9 @@
               <div class="text-center">
                   <!-- <img src="assets/logo2.png"
                     style="width: 185px;" alt="logo"> -->
-                  <h4 class="mt-1 mb-3 pb-1">Ijen Batik Bondowoso</h4>
+                  <h4 class="mt-1 mb-3 pb-1"></h4>
                 </div>
-                <p class="small mb-0">Kami Ijen Batik Bondowoso membuat Batik Tulis Batik Cap dan Abstrack,
-desain dan warna beda dengan yang lain, kami membuat warna dengan cara gradasi atau sembur dengan tekhnik batik lukis,
-adapun motif kami yaitu Motif Singkong.</p>
+                <p class="small mb-0"></p>
               </div>
             </div>
           </div>

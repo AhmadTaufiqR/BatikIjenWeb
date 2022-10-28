@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+
+body{
+    font-family: 'Oxygen', sans-serif; 
+    font-size: 15px;
+    color:#222831
+}
+.assets-Sb_batik {
+    background-image: url('assets/Sb_batik.png');
+    background-size: cover;
+
+}
+
