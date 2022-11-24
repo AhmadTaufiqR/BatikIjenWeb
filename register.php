@@ -7,8 +7,8 @@ $password = $_POST["password"];
 $no_telepon = $_POST["no_telepon"];
 
 
-$query_sql = "INSERT INTO tb_pengguna (username, nama_lengkap, email, password, no_telepon, level )
-VALUES ('$username', '$nama_lengkap', '$email', '$password', '$no_telepon', 'Admin')";
+$query_sql = "INSERT INTO tb_pengguna (username, nama_lengkap, email, password, no_telepon )
+VALUES ('$username', '$nama_lengkap', '$email', '$password', '$no_telepon')";
 
 if (mysqli_query($koneksi, $query_sql)) {
     header("Location: index.php");
