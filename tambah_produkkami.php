@@ -35,10 +35,11 @@
 					<span class="text">Toko Saya</span>
 				</a>
 			</li>
-			<li>
+      <li class="active">
 				<a href="produkkami.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Produk</span>
+      </li>
 				</a>
 			</li>
 			<li>
@@ -47,7 +48,7 @@
 					<span class="text">Pesanan</span>
 				</a>
 			</li>
-				<li class="active">
+      <li>
 				<a href="laporan.php">
 					<i class='bx bxs-book' ></i>
 					<span class="text">Laporan</span>
@@ -107,20 +108,20 @@
               <!-- /.card-header -->
               <!-- form start -->
               <?php
-                echo form_open('tambah_produk');
+                echo form_open('tambah_produkkami');
               ?>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Produk</label>
-                    <input type="text" class="form-control" name="input_Nama_Produk" placeholder="Nama Produk">
+                    <input type="text" class="form-control" name="input_nama_produk" placeholder="nama produk">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Jumlah Produk</label>
-                    <input type="text" class="form-control" name="input_Jumlah_Produk" placeholder="Jumlah Produk">
+                    <label for="exampleInputEmail1">Stok</label>
+                    <input type="text" class="form-control" name="input_stok" placeholder="stok">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Harga Produk</label>
-                    <input type="text" class="form-control" name="input_Harga_Produk" placeholder="Harga Produk">
+                    <input type="text" class="form-control" name="input_harga_produk" placeholder="harga produk">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Jenis Produk</label>
@@ -128,15 +129,15 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Gambar Produk</label>
-                    <input type="text" class="form-control" name="input_Gambar_Produk" placeholder="Gambar Produk">
+                    <input type="text" class="form-control" name="input_gambar_produk" placeholder="gambar produk">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Rincian Produk</label>
-                    <input type="text" class="form-control" name="input_Rincian_Produk" placeholder="Rincian Produk">
+                    <input type="text" class="form-control" name="input_rincian_produk" placeholder="rincian produk">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Ukuran Produk</label>
-                    <input type="text" class="form-control" name="input_Ukuran_Produk" placeholder="Ukuran Produk">
+                    <input type="text" class="form-control" name="input_ukuran_produk" placeholder="ukuran produk">
                   </div>
                 </div>
                 <!-- /.card-body -->
