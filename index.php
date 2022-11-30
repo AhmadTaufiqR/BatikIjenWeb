@@ -28,7 +28,7 @@
             
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username"  name="username"/>
+              <input type="text" placeholder="email"  name="email"/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>

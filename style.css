@@ -423,3 +423,39 @@ form.sign-in-form {
     left: 50%;
   }
 }
+
+.container-logout {
+  width: 500px;
+  min-height: 200px;
+  background: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+  padding: 40px 30px;
+}
+
+.container-logout .login-email .input-group .btn {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
+  border: none;
+  background: #a29bfe;
+  outline: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #FFF;
+  cursor: pointer;
+  transition: .3s;
+  margin-top: 20px;
+}
+
+.container-logout .login-email .input-group .btn:hover {
+  transform: translateY(-5px);
+  background: #6c5ce7;
+}
+
+@media (max-width: 430px) {
+  .container {
+      width: 300px;
+  }
+}
