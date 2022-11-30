@@ -108,7 +108,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               <?php
-                echo form_open('tambah_produkkami');
+                // echo form_open('tambah_produkkami');
               ?>
                 <div class="card-body">
                   <div class="form-group">
