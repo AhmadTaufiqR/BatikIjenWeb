@@ -11,5 +11,3 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-
-
