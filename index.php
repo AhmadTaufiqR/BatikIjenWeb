@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>Sign in & Sign up Form</title>
+    <title>Register dan Login</title>
   </head>
   <body>
     <div class="container">
