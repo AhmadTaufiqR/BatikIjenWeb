@@ -22,9 +22,9 @@ if($cek > 0){
 		header("location:dashboard.html");
 	}else{
 		// alihkan ke halaman login kembali
-		header("location:index.php?pesan=gagal");
+		header("location:LogAndReg.php?pesan=gagal");
 	}	
 }else{
-	header("location:index.php?pesan=gagal");
+	header("location:LogAndReg.php?pesan=gagal");
 	}
 ?>

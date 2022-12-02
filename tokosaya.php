@@ -170,76 +170,49 @@
             <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
+                    
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Basic Form</h6>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Horizontal Form</h6>
+                            <h6 class="mb-4">Data Toko</h6>
                             <form>
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <label for="inputEmail3" >Nama Toko</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3">
+                                        <input type="nama_toko" class="form-control" id="inputEmail3">
                                     </div>
-                                </div>
+                                    </div>
                                 <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                    <label for="inputPassword3" >Pemilik Toko</label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="inputPassword3">
+                                        <input type="pemilik_toko" class="form-control" id="inputPassword3">
+                                     </div>
                                     </div>
-                                </div>
-                                <fieldset class="row mb-3">
-                                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="gridRadios1">
-                                                First radio
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios2" value="option2">
-                                            <label class="form-check-label" for="gridRadios2">
-                                                Second radio
-                                            </label>
-                                        </div>
+                                    <div class="row mb-3">
+                                    <label for="inputEmail3" >Alamat</label>
+                                    <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2"></label>
                                     </div>
-                                </fieldset>
+                                    </div>
                                 <div class="row mb-3">
-                                    <legend class="col-form-label col-sm-2 pt-0">Checkbox</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                            <label class="form-check-label" for="gridCheck1">
-                                                Check me out
-                                            </label>
-                                        </div>
+                                    <label for="inputPassword3">Deskripsi</label>
+                                    <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2"></label>
                                     </div>
+                                 </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" >No. Telepon</label>
+                                    <div class="col-sm-10">
+                                        <input type="no_telephone" class="form-control" id="inputPassword3">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                                
+                                <div class="d-grid gap-2 d-md-block">
+                                <button type="button" class="btn btn-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Edit</button>
+                                <button type="button" class="btn btn-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Simpan</button>
+                                <button type="button" class="btn btn-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Hapus</button>
+                                </div>
                             </form>
                         </div>
                     </div>
