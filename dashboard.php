@@ -7,8 +7,9 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>SANGGAR BATIK -PESANAN</title>
+    
+<meta charset="utf-8">
+    <title>SANGGAR BATIK -DASHBOARD</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -49,33 +50,33 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i></i>Sanggar Batik</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Rizki Farhan</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                    </div>
-                    <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-table shop me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    <div class="nav-item dropdown">
-                    </div>
-                </div>
-            </nav>
+    <nav class="navbar bg-light navbar-light">
+        <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary"><i></i>Sanggar Batik</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Rizki Farhan</h6>
+                <span>Admin</span>
+            </div>
         </div>
+        <div class="navbar-nav w-100">
+            <a href="dashboard.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <div class="nav-item dropdown">
+            </div>
+            <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
+            <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
+            <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
+            <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
+            <div class="nav-item dropdown">
+            </div>
+        </div>
+    </nav>
+</div>
         <!-- Sidebar End -->
 
 
@@ -101,7 +102,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -111,7 +112,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -121,7 +122,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -164,32 +165,34 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="login.php" class="nav-item nav-link">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
+           
             <!-- Navbar End -->
 
 
-            <!-- Chart Start -->
+            <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Semua Pesanan</p>
-                                <h6 class="mb-0">20</h6>
+                                <p class="mb-2">Pesanan Masuk</p>
+                                <h6 class="mb-0">4</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-4">
+                   
+                    <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Pesanan diproses</p>
-                                <h6 class="mb-0">4</h6>
+                                <p class="mb-2">Saldo</p>
+                                <h6 class="mb-0">3000000</h6>
                             </div>
                         </div>
                     </div>
@@ -197,74 +200,61 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Pesanan dikirim</p>
-                                <h6 class="mb-0">4</h6>
+                                <p class="mb-2">Produk Populer</p>
+                                <h6 class="mb-0">1</h6>
                             </div>
                         </div>
                     </div>
-            
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Data Pesanan</h6>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                                    <thead>
-                                        <tr class="text-dark">
-                                            <th class="text-center">Id Pesanan</th>
-                                            <th class="text-center">Nama Pembeli</th>
-                                            <th class="text-center">Tanggal Pesanan</th>
-                                            <th class="text-center">Status Pesanan</th>
-                                            <th class="text-center">Total</th>
-                                            <th class="text-center" >Aksi</th>
-                                                                                
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php if(mysqli_num_rows($query)) {?>
-                                            <?php while($row = mysqli_fetch_array($query)) {?>
-                                        <tr>
-                                            <td class="text-center"><?php echo $row['id_pesanan'] ?></td>
-                                            <td class="text-center"><?php echo $row['nama_lengkap'] ?></td>
-                                            <td class="text-center"><?php echo $row['tanggal_pesanan'] ?></td>
-                                            <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
-                                            <td class="text-center"><?php echo $row['total'] ?></td>
-                                            
-                                        </tr>
-                                        <?php } ?>
-                                        <?php } ?>
-                                        </tr>
-                                    </tbody>
+            <!-- Sale & Revenue End -->
 
-                                </table>
-                            </div>
-                        </div>       
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Pesanan Terbaru</h6>
+                        
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-dark">
+                                    <th class="text-center">Id Pesanan</th>
+                                    <th class="text-center">Nama Pembeli</th>
+                                    <th class="text-center">Tanggal Pesanan</th>
+                                    <th class="text-center">Status Pesanan</th>
+                                    <th class="text-center">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if(mysqli_num_rows($query)) {?>
+                                    <?php while($row = mysqli_fetch_array($query)) {?>
+                                <tr>
+                                    <td class="text-center"><?php echo $row['id_pesanan'] ?></td>
+                                    <td class="text-center"><?php echo $row['nama_lengkap'] ?></td>
+                                    <td class="text-center"><?php echo $row['tanggal_pesanan'] ?></td>
+                                    <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
+                                    <td class="text-center"><?php echo $row['total'] ?></td>
+                                 </tr>
+                                 <?php } ?>
+                                 <?php } ?>
+                                </tr>
+                            </tbody>
+
+                        </table>
                     </div>
                 </div>
             </div>
-                            
-                   
-                    <!-- <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Chart End -->
+            <!-- Recent Sales End -->
 
-
-          
+            <!-- Footer Start -->
+            
+            </div>
+            <!-- Footer End -->
         </div>
         <!-- Content End -->
 
-
         <!-- Back to Top -->
-      
+        
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -279,6 +269,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

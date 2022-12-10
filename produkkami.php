@@ -49,25 +49,25 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Sanggar Batik</h3>
+                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i></i>Sanggar Batik</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Lyna Aprilia</h6>
+                        <h6 class="mb-0">Rizki Farhan</h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                    <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Produk kami</a>
+                    <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
+                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
+                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     <div class="nav-item dropdown">
                     </div>
@@ -82,7 +82,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
             <!-- Navbar Start -->
             
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="dashboard.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="dashboard.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -157,64 +157,69 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Lyna Aprilia</span>
+                            <img class="rounded-circle me-lg-2" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Rizki Farhan</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Keluar</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
-<button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
-                            <table class="table table">
-                                                    <tbody>
-                                                                    <form  class="table" method="post"  style="margin-left:50px; float:left; padding: 80px 150px; margin: bottom 0;" border="1" > 
-                                                                    <table class="table table-striped" style="float:left; margin-left: 0px; margin: 0px;" border="1" align="left">
-                                                                        <th class="text-center">Id Produk</th>
-                                                                        <th class="text-center">Nama Produk</th>
-                                                                        <th class="text-center">Stok</th>
-                                                                        <th class="text-center">Harga Produk</th>
-                                                                        <th class="text-center">Jenis Produk</th>
-                                                                        <!-- <th class="text-center">Gambar Produk</th> -->
-                                                                        <th class="text-center">Rincian Produk</th>
-                                                                        <th class="text-center">Ukuran Produk</th>
-                                                                        <th class="text-center">Aksi</th>
-                                                                </tbody>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <?php if(mysqli_num_rows($query)) {?>
-                                                                        <?php while($row = mysqli_fetch_array($query)) {?>
-                                                                    <tr>
-                                                                        <td class="text-center"><?php echo $row['id_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['nama_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['stok'] ?></td>
-                                                                        <td class=" text-center"><?php echo $row['harga_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
-                                                                        <!-- <td class="text-center"><?php echo $row['gambar_produk'] ?></td> -->
-                                                                        <td class="text-center"><?php echo $row['rincian_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
-                                                                     </tr>
-                                                                     <?php } ?>
-                                                                     <?php } ?>
-                                                                        </form>
-                          </tbody>
-                        </table>
+            <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
+            
+                        <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Data Produk</h6>
                             </div>
-                        </div>
+                            <div class="table-responsive">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th class="text-center">Id Produk</th>
+                                            <th class="text-center">Nama Produk</th>
+                                            <th class="text-center">Stok</th>
+                                            <th class="text-center">Harga Produk</th>
+                                            <th class="text-center">Jenis Produk</th>
+                                            <th class="text-center">Gambar Produk</th>
+                                            <th class="text-center">Size</th>
+                                            <th class="text-center" >Aksi</th>
+                                                                                
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if(mysqli_num_rows($query)) {?>
+                                            <?php while($row = mysqli_fetch_array($query)) {?>
+                                        <tr>
+                                            <td class="text-center"><?php echo $row['id_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['nama_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['stok'] ?></td>
+                                            <td class="text-center"><?php echo $row['harga_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['gambar_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
+                                            
+                                        </tr>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>       
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+                     
             <!-- Table End -->
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Sanggar Batik</a>, Website. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">Kelompok 3</a>
+            
                         
             <!-- Footer End -->
 

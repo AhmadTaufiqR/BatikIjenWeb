@@ -1,11 +1,13 @@
 <?php
 include 'koneksi.php';
+// $username = htmlspecialchars($_POST["username"]);
 $username = $_POST["username"];
 $nama_lengkap = $_POST["nama_lengkap"];
 $email = $_POST["email"];
-$password = $_POST["password"];
-$no_telephone = $_POST["no_telephone"];
-$level = $_POST["admin"];
+$password = md5($_POST["password"]);
+// $password = $_POST["password"];
+$no_telephone = $_POST["telepon"];
+
 
 
 $query_sql = "INSERT INTO tb_pengguna (username, nama_lengkap, email, password, no_telephone, level )

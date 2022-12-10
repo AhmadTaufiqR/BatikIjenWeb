@@ -45,7 +45,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.html" class="navbar-brand mx-4 mb-3">
+                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Sanggar Batik</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -59,12 +59,12 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                     </div>
                     <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Pesanan</a>
                     <a href="tokosaya.php" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produk Kami</a>
+                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     <div class="nav-item dropdown">
                     </div>
@@ -78,7 +78,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="dashboard.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="dashboard.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -159,7 +159,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Keluar</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -169,58 +169,45 @@
 
             <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
+                <h3>Form Produk</h3>
                 <div class="row g-4">
-                    
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Add Product</h6>
-                            <form>
-                                <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="nama_produk" class="form-control" id="inputEmail3">
-                                    </div>
+                
+                            <form class="row g-3">
+                            <div class="col-md-6">
+                             <label for="nama_produk" class="form-label">Nama Produk</label>
+                              <input type="nama_produk" class="form-control" id="nama_produk">
+                         </div>
+                              <div class="col-md-6">
+                              <label for="stok" class="form-label">Stok</label>
+                              <input type="stok" class="form-control" id="stok">
+                          </div>
+                             <form class="row g-3">
+                            <div class="col-md-6">
+                             <label for="harga_produk" class="form-label">Harga Produk</label>
+                              <input type="harga_produk" class="form-control" id="harga_produk">
+                         </div>
+                              <div class="col-md-6">
+                              <label for="jenis_produk" class="form-label">Jenis Produk</label>
+                              <input type="jenis_produk" class="form-control" id="jenis_produk">
+                          </div>
+                          <div class="mb-3">
+                              <label for="formFile" class="form-label">Gambar Produk</label>
+                              <input class="form-control" type="file" id="formFile">
+                              </div>
+                         <div class="mb-5">
+                               <label for="rincian_produk" class="form-label">Rincian Produk</label>
+                               <textarea class="form-control" id="rincian_produk" rows="3"></textarea>
+                              </div>
+                         <div class="col-md-2">
+                                <label for="ukuran_produk" class="form-label">Ukuran Produk</label>
+                                <input type="text" class="form-control" id="ukuran_produk">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Stok</label>
-                                    <div class="col-sm-10">
-                                        <input type="stok" class="form-control" id="inputPassword3">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Harga Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="harga_produk" class="form-control" id="inputPassword3">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Jenis Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="jenis_produk" class="form-control" id="inputPassword3">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Gambar Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="gambar_produk" class="form-control" id="inputPassword3">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Rincian Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="rincian_produk" class="form-control" id="inputPassword3">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Ukuran Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="ukuran_produk" class="form-control" id="inputPassword3">
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary">SIMPAN</button>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                               <button type="simpan" class="btn btn-success " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Submit</button>
+                                 <button type="hapus" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Cancel</button>
                             </form>
                         </div>
-                    </div>
+                    
                    
                    
             <!-- Form End -->
