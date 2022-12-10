@@ -62,11 +62,11 @@
                     <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                     </div>
+                    
                     <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
                     <a href="tokosaya.php" class="nav-item nav-link active"><i class="fa fa-home me-2"></i>Toko Saya</a>
                     <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    <div class="nav-item dropdown">
                     </div>
                 </div>
             </nav>
@@ -159,7 +159,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -176,21 +176,15 @@
  
 			<div class="card-footer">
 				<a href="https://www.malasngoding.com/card-bootstrap-4/" class="card-link">
-
-                
-                </a>
-			</div>
-		</div>
-	</div>
-
-
-        <button type="button" class="btn btn-success m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_toko.php" style="color: #fff">Tambah</a></button>
-
+            </div>
             
 
-
-           
-            
+        </div>
+        <!-- Content End -->
+        <div class="p-2">
+        <a href="tambah_toko.php" class="btn btn-success">+ tambah</a>
+        </div>
+        
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
