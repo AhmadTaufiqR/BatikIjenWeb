@@ -62,16 +62,10 @@
                     <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                     </div>
+                    
                     <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
                     <a href="tokosaya.php" class="nav-item nav-link active"><i class="fa fa-home me-2"></i>Toko Saya</a>
                     <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    <div class="nav-item dropdown">
-                    </div>
-                    <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link active"><i class="fa fa-home me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
->>>>>>> 88b1bede3ebdd05d7ea38bd06c4e524f71b6cf22
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     </div>
                 </div>
@@ -182,78 +176,15 @@
  
 			<div class="card-footer">
 				<a href="https://www.malasngoding.com/card-bootstrap-4/" class="card-link">
-
-            <!-- Form Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Data Toko</h6>
-                            <form>
-                                <div class="row mb-3">
-                                    <label for="inputEmail3" >Nama Toko</label>
-                                    <div class="col-sm-10">
-                                        <input type="nama_toko" class="form-control" id="inputEmail3">
-                                    </div>
-                                    </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" >Pemilik Toko</label>
-                                    <div class="col-sm-10">
-                                        <input type="pemilik_toko" class="form-control" id="inputPassword3">
-                                     </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                    <label for="inputEmail3" >Alamat</label>
-                                    <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                    <label for="floatingTextarea2"></label>
-                                    </div>
-                                    </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3">Deskripsi</label>
-                                    <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                                    <label for="floatingTextarea2"></label>
-                                    </div>
-                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" >No. Telepon</label>
-                                    <div class="col-sm-10">
-                                        <input type="no_telephone" class="form-control" id="inputPassword3">
-                                </div>
-                                </div>
-                                
-                                <div class="d-grid gap-2 d-md-block">
-                                <button type="button" class="btn btn-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Edit</button>
-                                <button type="button" class="btn btn-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Simpan</button>
-                                <button type="button" class="btn btn-primary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Hapus</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                   
-                   
-            <!-- Form End -->
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Sanggar Batik</a>, Website. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">Kelompok 3</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- Footer End -->
+            
+
         </div>
         <!-- Content End -->
+        <div class="p-2">
+        <a href="tambah_toko.php" class="btn btn-success">+ tambah</a>
+        </div>
+        
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -30,9 +30,9 @@ session_start();
 
 
  require_once("../koneksi.php");
- $plat = $_GET['id_produk'];
+ $id_produk = $_GET['id_produk'];
  $sql = "DELETE FROM tb_produk WHERE id_produk='$id_produk'";
- if (mysqli_query($db, $sql)) {
+ if (mysqli_query($koneksi, $sql)) {
     header("Location: ../produkkami.php");
 
  } else {
@@ -41,7 +41,7 @@ session_start();
 
  </script>";
  }
- mysqli_close($conn);
+ mysqli_close($koneksi);
  
 
 ?>

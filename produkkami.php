@@ -69,6 +69,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                     <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
                     <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
+                    <div class="nav-item dropdown">
                     </div>
                 </div>
             </nav>
@@ -162,49 +163,56 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="logout.php" class="dropdown-item">Logout</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
-<button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
-                            <table class="table table">
-                                                    <tbody>
-                                                                    <form  class="table" method="post"  style="margin-left:50px; float:left; padding: 80px 150px; margin: bottom 0;" border="1" > 
-                                                                    <table class="table table-striped" style="float:left; margin-left: 0px; margin: 0px;" border="1" align="left">
-                                                                        <th class="text-center">No</th>
-                                                                        <th class="text-center">Nama Produk</th>
-                                                                        <th class="text-center">Stok</th>
-                                                                        <th class="text-center">Harga Produk</th>
-                                                                        <th class="text-center">Jenis Produk</th>
-                                                                        <th class="text-center">Gambar Produk</th>
-                                                                        <th class="text-center">Rincian Produk</th>
-                                                                        <th class="text-center">Ukuran Produk</th>
-                                                                        <th class="text-center">Aksi</th>
-                                                                        
-                                                                </tbody>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <?php if(mysqli_num_rows($query)) {?>
-                                                                        <?php while($row = mysqli_fetch_array($query)) {?>
-                                                                    <tr>
-                                                                        <td class="text-center"><?php echo $row['id_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['nama_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['stok'] ?></td>
-                                                                        <td class=" text-center"><?php echo $row['harga_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
-                                                                        <td><img src="image_view.php?id_produk=<?php echo $row['id_produk']; ?>" width="100"/></td>
-                                                                        <td class="text-center"><?php echo $row['rincian_produk'] ?></td>
-                                                                        <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
-                                                                        <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="function/edit.php?plat=<?php echo $row['plat'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?plat=<?php echo $row['plat'];?>">Hapus</a></td>
+            <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
+            
+                        <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Data Produk</h6>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th class="text-center">Id Produk</th>
+                                            <th class="text-center">Nama Produk</th>
+                                            <th class="text-center">Stok</th>
+                                            <th class="text-center">Harga Produk</th>
+                                            <th class="text-center">Jenis Produk</th>
+                                            <th class="text-center">Gambar Produk</th>
+                                            <th class="text-center">Size</th>
+                                            <th class="text-center" >Aksi</th>
+                                                                                
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if(mysqli_num_rows($query)) {?>
+                                            <?php while($row = mysqli_fetch_array($query)) {?>
+                                        <tr>
+                                            <td class="text-center"><?php echo $row['id_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['nama_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['stok'] ?></td>
+                                            <td class="text-center"><?php echo $row['harga_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['gambar_produk'] ?></td>
+                                            <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
+                                            <div class="d-grid gap-2">
+                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
+                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
                                                                      </tr>
-                                                                     <?php } ?>
-                                                                     <?php } ?>
-                                                                        </form>
-                          </tbody>
-                        </table>
+ 
+                                        </tr>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
                             </div>
                         </div>       
                     </div>

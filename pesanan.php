@@ -64,17 +64,13 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Toko saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produk Kami</a>
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    </div>
-                    <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-table shop me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
->>>>>>> 88b1bede3ebdd05d7ea38bd06c4e524f71b6cf22
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
+                <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <div class="nav-item dropdown">
+                </div>
+                <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-table shop me-2"></i>Pesanan</a>
+                <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
+                <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
+                <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     </div>
                 </div>
             </nav>
