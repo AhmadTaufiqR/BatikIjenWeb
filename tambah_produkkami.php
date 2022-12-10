@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SANGGAR BATIK -TOKO SAYA</title>
+    <title>SANGGAR BATIK -TAMBAH PRODUK</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -59,12 +59,10 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                    </div>
+                <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produk Kami</a>
+                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
+                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     <div class="nav-item dropdown">
                     </div>
@@ -159,7 +157,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Keluar</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -171,58 +169,85 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Add Product</h6>
-                            <form>
-                                <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="nama_produk" class="form-control" id="inputEmail3">
-                                    </div>
+                    
+                            <form class="row g-3">
+                               <div class="col-md-6">
+                                <label for="nama_produk" class="form-label">Nama Produk</label>
+                               <input type="nama_produk" class="form-control" id="nama_produk">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Stok</label>
-                                    <div class="col-sm-10">
-                                        <input type="stok" class="form-control" id="inputPassword3">
-                                    </div>
+                                  <div class="col-md-6">
+                                   <label for="stok" class="form-label">Stok</label>
+                                      <input type="number" class="form-control" id="stok">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Harga Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="harga_produk" class="form-control" id="inputPassword3">
+                                <div class="card-body">
+                                    <label for="inputPassword">Harga Produk</label>
+                                    <div class="col-sm-15">
+                                        <input type="harga_produk" class="form-control" id="harga_produk">
                                     </div>
+                                    <label for="nama_produk" class="form-label">Gambar produk</label>
+                               <input type="file" class="form-control" id="gambar_produk">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Jenis Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="jenis_produk" class="form-control" id="inputPassword3">
-                                    </div>
+                                  <div class="col-md-12">
+                                  <label for="inputPassword">Rincian Produk</label>
+                                    <div class="col-sm-15">
+                                      <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="rincian_produk"></textarea>
+                                 <label for="floatingTextarea">Rincian Produk</label>
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Gambar Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="gambar_produk" class="form-control" id="inputPassword3">
-                                    </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Rincian Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="rincian_produk" class="form-control" id="inputPassword3">
-                                    </div>
+                                  <div class="col-md-12">
+                                   <label for="stok" class="form-label">Ukuran Produk</label>
+                                      <input type="ukuran_produk" class="form-control" id="ukuran produk">
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Ukuran Produk</label>
-                                    <div class="col-sm-10">
-                                        <input type="ukuran_produk" class="form-control" id="inputPassword3">
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-denger">RESET</button>
+                                    <input type="submit" class="btn btn-success" name="tambah" value="SIMPAN">
                                 </div>
-                                <button type="submit" class="btn btn-primary">SIMPAN</button>
-                            </form>
-                        </div>
-                    </div>
-                   
-                   
+                                </form>
+                                <?php
+                                // require_once('koneksi.php');
+                                // $image = $_FILES['path_gambar']['name'];
+                                // $name = $_POST['id_toko'];
+                                // $name = $_POST['nama_produk'];
+                                // $name = $_POST['stok'];
+                                // $name = $_POST['harga_produk'];
+                                // $name = $_POST['jenis_produk'];
+                                // $name = $_POST['rincian_produk'];
+                                // $name = $_POST['ukuran_produk'];
+                                // $name = $_POST['harga_produk'];
+                                // $name = $_POST['id_kategori'];
+
+                                // $imagePath = 'uploads/' . $image;
+                                // $tmp_name = $_FILES['path_gambar']['tmp_name'];
+
+                                // move_uploaded_file($tmp_name, $imagePath);
+
+                                // $connection->query("insert into user(path_gambar, name) values('" . $image . "', '" . $name . "')");
+                                // ?>
+                                <?php
+                                // if(@$_POST['tambah']) {
+                                //     $nama_produk = $connection->conn->real_eacape_string($_POST['nama_produk']);
+                                //     $stok = $connection->conn->real_eacape_string($_POST['stok']);
+                                //     $harga_produk = $connection->conn->real_eacape_string($_POST['harga_produk']);
+                                //     $jenis_produk = $connection->conn->real_eacape_string($_POST['jenis_produk']);
+
+                                    // $extensi = explode(".". $_FILES['gambar_barang']['name']);
+                                    // $gambar_produk = "gambar".round(microtime(true)).".".end($extensi);
+                                    // $sumber = $_FILES['gambar_produk']['tmp_name'];
+                                    // $upload = move_uploaded_file($sumber, "img/produk.".$gambar_produk)
+                                    // if($upload){
+                                    //     $gambar_produk->
+                                    // } else{
+                                    //     echo "<script>alert('upload gambar gagal')</script>";
+                                    // }
+                                    // $gambar_produk = $connection->conn->real_eacape_string($_POST['gambar_produk']);
+                                    // $rincian_produk = $connection->conn->real_eacape_string($_POST['rincian_produk']);
+                                    // $ukuran_produk = $connection->conn->real_eacape_string($_POST['ukuran_produk']);
+                                // }
+                                // ?>
+                             </div>
+                                 </div>
+                    
             <!-- Form End -->
 
 

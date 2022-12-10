@@ -5,7 +5,7 @@ session_start();
 include 'koneksi.php';
 // menangkap data yang dikirim dari form login
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 // menyeleksi data user dengan email dan password yang sesuai
 $login = mysqli_query($koneksi,"select * from tb_pengguna where email='$email' and password='$password'");
 // menghitung jumlah data yang ditemukan

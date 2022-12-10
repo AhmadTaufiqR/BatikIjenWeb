@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <?php
+            if (isset($_GET['pesan'])) {
+            if ($_GET['pesan'] == "gagal") {
+            echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
+            }
+           }
+           ?>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Register dan Login</title>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Login</title>
   </head>
   <body>
     <div class="container">
@@ -22,10 +29,10 @@
               
             </div> -->
             
+            
             <img class="logo" src="img/logo1.png" alt="Logo" />
             
             <h2 class="title">Login</h2>
-            
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" placeholder="email"  name="email"/>
@@ -35,9 +42,7 @@
               <input type="password" placeholder="Password" name="password"/>
             </div>
             <button type="submit" value="Login" class="btn solid" >Login</button>
-            
           </form>
-          <!-- Form Register -->
           <form action="register.php" class="sign-up-form" method= "POST">
             <h2 class="title">Register</h2>
             <div class="input-field">
@@ -58,7 +63,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-phone"></i>
-              <input type="no_telepon" placeholder="No.Telepon" name="no_telepon"/>
+              <input type="number" placeholder="No.Telepon" name="telepon"/>
             </div>
             <input type="submit" class="btn" value="Register" />
             
@@ -76,7 +81,7 @@
             <button class="btn transparent" id="sign-up-btn">
               Register
             </button>
-          </div>
+          </div> 
           <img src="img/Batik_animasi.png" class="image" alt="" />
         </div>
         <div class="panel right-panel">

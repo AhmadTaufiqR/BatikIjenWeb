@@ -64,12 +64,10 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
                     <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>pesanan</a>
                     <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
                     <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Produk kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    <div class="nav-item dropdown">
                     </div>
                 </div>
             </nav>
@@ -163,7 +161,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Keluar</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -173,15 +171,16 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                                     <tbody>
                                                                     <form  class="table" method="post"  style="margin-left:50px; float:left; padding: 80px 150px; margin: bottom 0;" border="1" > 
                                                                     <table class="table table-striped" style="float:left; margin-left: 0px; margin: 0px;" border="1" align="left">
-                                                                        <th class="text-center">Id Produk</th>
+                                                                        <th class="text-center">No</th>
                                                                         <th class="text-center">Nama Produk</th>
                                                                         <th class="text-center">Stok</th>
                                                                         <th class="text-center">Harga Produk</th>
                                                                         <th class="text-center">Jenis Produk</th>
-                                                                        <!-- <th class="text-center">Gambar Produk</th> -->
+                                                                        <th class="text-center">Gambar Produk</th>
                                                                         <th class="text-center">Rincian Produk</th>
                                                                         <th class="text-center">Ukuran Produk</th>
                                                                         <th class="text-center">Aksi</th>
+                                                                        
                                                                 </tbody>
                                                                 </thead>
                                                                 <tbody>
@@ -193,9 +192,12 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                                                         <td class="text-center"><?php echo $row['stok'] ?></td>
                                                                         <td class=" text-center"><?php echo $row['harga_produk'] ?></td>
                                                                         <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
-                                                                        <!-- <td class="text-center"><?php echo $row['gambar_produk'] ?></td> -->
+                                                                        <td><img src="image_view.php?id_produk=<?php echo $row['id_produk']; ?>" width="100"/></td>
                                                                         <td class="text-center"><?php echo $row['rincian_produk'] ?></td>
                                                                         <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
+                                                                        <div class="d-grid gap-2">
+                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="function/edit.php?plat=<?php echo $row['plat'];?>">Edit</a>
+                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?plat=<?php echo $row['plat'];?>">Hapus</a></td>
                                                                      </tr>
                                                                      <?php } ?>
                                                                      <?php } ?>
