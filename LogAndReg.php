@@ -18,6 +18,7 @@
     <title>Login</title>
   </head>
   <body>
+    
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
@@ -63,7 +64,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-phone"></i>
-              <input type="number" placeholder="No.Telepon" name="telepon"/>
+              <input type="no_telepon" placeholder="No.Telepon" name="telepon"/>
             </div>
             <input type="submit" class="btn" value="Register" />
             

@@ -1,7 +1,7 @@
 <?php
-// mengaktifkan session php
-session_start();
-// menghapus semua session
-session_destroy();
-// mengalihkan halaman ke halaman login
-header("location:LogAndReg.php");
+    session_start();
+    //logout
+    session_destroy();
+    // arahkan ke halaman index.php 
+    header("location: LogAndReg.php");
+?>
