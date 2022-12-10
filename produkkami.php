@@ -201,7 +201,11 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                             <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
                                             <td class="text-center"><?php echo $row['gambar_produk'] ?></td>
                                             <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
-                                            
+                                            <div class="d-grid gap-2">
+                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
+                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
+                                                                     </tr>
+ 
                                         </tr>
                                         <?php } ?>
                                         <?php } ?>
