@@ -1,13 +1,15 @@
 <?php
 include 'koneksi.php';
-$query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_produk ASC ")
+$query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_lengkap, pesanan.tanggal_pesanan, pesanan.status_pesanan, pesanan.total FROM pesanan JOIN tb_pengguna ON pesanan.id_pengguna = tb_pengguna.id_pengguna")
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>SANGGAR BATIK -PRODUK KAMI</title>
+    
+<meta charset="utf-8">
+    <title>SANGGAR BATIK -DASHBOARD</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,39 +50,39 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i></i>Sanggar Batik</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Rizki Farhan</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                    <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Produk Kami</a>
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    <div class="nav-item dropdown">
-                    </div>
-                </div>
-            </nav>
+    <nav class="navbar bg-light navbar-light">
+        <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary"><i></i>Sanggar Batik</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Rizki Farhan</h6>
+                <span>Admin</span>
+            </div>
         </div>
+        <div class="navbar-nav w-100">
+            <a href="dashboard.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <div class="nav-item dropdown">
+            </div>
+            <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
+            <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
+            <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
+            <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
+            <div class="nav-item dropdown">
+            </div>
+        </div>
+    </nav>
+</div>
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="dashboard.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
@@ -163,69 +165,96 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="login.php" class="nav-item nav-link">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
-            <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
-            
-                        <div class="container-fluid pt-4 px-4">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Data Produk</h6>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table text-start align-middle table-bordered table-hover mb-0">
-                                    <thead>
-                                        <tr class="text-dark">
-                                            <th class="text-center">Id Produk</th>
-                                            <th class="text-center">Nama Produk</th>
-                                            <th class="text-center">Stok</th>
-                                            <th class="text-center">Harga Produk</th>
-                                            <th class="text-center">Jenis Produk</th>
-                                            <th class="text-center">Gambar Produk</th>
-                                            <th class="text-center">Size</th>
-                                            <th class="text-center" >Aksi</th>
-                                                                                
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php if(mysqli_num_rows($query)) {?>
-                                            <?php while($row = mysqli_fetch_array($query)) {?>
-                                        <tr>
-                                            <td class="text-center"><?php echo $row['id_produk'] ?></td>
-                                            <td class="text-center"><?php echo $row['nama_produk'] ?></td>
-                                            <td class="text-center"><?php echo $row['stok'] ?></td>
-                                            <td class="text-center"><?php echo $row['harga_produk'] ?></td>
-                                            <td class="text-center"><?php echo $row['jenis_produk'] ?></td>
-                                            <td class="text-center"><?php echo $row['gambar_produk'] ?></td>
-                                            <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
-                                            <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
-                                                                     </tr>
- 
-                                        </tr>
-                                        <?php } ?>
-                                        <?php } ?>
-                                        </tr>
-                                    </tbody>
+           
+            <!-- Navbar End -->
 
-                                </table>
+
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Pesanan Masuk</p>
+                                <h6 class="mb-0">4</h6>
                             </div>
-                        </div>       
+                        </div>
                     </div>
+                   
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Saldo</p>
+                                <h6 class="mb-0">3000000</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Produk Populer</p>
+                                <h6 class="mb-0">1</h6>
+                            </div>
+                        </div>
+                    </div>
+            <!-- Sale & Revenue End -->
 
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Pesanan Terbaru</h6>
+                        
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-dark">
+                                    <th class="text-center">Id Pesanan</th>
+                                    <th class="text-center">Nama Pembeli</th>
+                                    <th class="text-center">Tanggal Pesanan</th>
+                                    <th class="text-center">Status Pesanan</th>
+                                    <th class="text-center">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if(mysqli_num_rows($query)) {?>
+                                    <?php while($row = mysqli_fetch_array($query)) {?>
+                                <tr>
+                                    <td class="text-center"><?php echo $row['id_pesanan'] ?></td>
+                                    <td class="text-center"><?php echo $row['nama_lengkap'] ?></td>
+                                    <td class="text-center"><?php echo $row['tanggal_pesanan'] ?></td>
+                                    <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
+                                    <td class="text-center"><?php echo $row['total'] ?></td>
+                                 </tr>
+                                 <?php } ?>
+                                 <?php } ?>
+                                </tr>
+                            </tbody>
+
+                        </table>
                     </div>
                 </div>
             </div>
-                     
-            <!-- Table End -->
+            <!-- Recent Sales End -->
+
             <!-- Footer Start -->
             
-                        
+            </div>
             <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+        <!-- Back to Top -->
+        
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -240,6 +269,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

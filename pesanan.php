@@ -1,3 +1,8 @@
+<?php
+include 'koneksi.php';
+$query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_lengkap, pesanan.tanggal_pesanan, pesanan.status_pesanan, pesanan.total FROM pesanan JOIN tb_pengguna ON pesanan.id_pengguna = tb_pengguna.id_pengguna")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,26 +50,26 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Sanggar Batik</h3>
+                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i></i>Sanggar Batik</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Lyna Aprilia</h6>
+                        <h6 class="mb-0">Rizki Farhan</h6>
                         <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                     </div>
-                    <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Toko saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produk Kami</a>
+                    <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-table shop me-2"></i>Pesanan</a>
+                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
+                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     <div class="nav-item dropdown">
                     </div>
@@ -78,7 +83,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="dashboard.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="dashboard.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -153,13 +158,13 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Lyna Aprilia</span>
+                            <img class="rounded-circle me-lg-2" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Rizki Farhan</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Keluar</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -175,16 +180,16 @@
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Semua Pesanan</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">20</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
+                    <div class="col-sm-6 col-xl-4">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pesanan diproses</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">4</h6>
                             </div>
                         </div>
                     </div>
@@ -193,31 +198,57 @@
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Pesanan dikirim</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">4</h6>
                             </div>
                         </div>
                     </div>
             
-                            
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Pemesan</h6>
-                            <div class="owl-carousel testimonial-carousel">
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
-                                    <h5 class="mb-1">Client Name</h5>
-                                    <p>Profession</p>
-                                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                                </div>
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid rounded-circle mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
-                                    <h5 class="mb-1">Client Name</h5>
-                                    <p>Profession</p>
-                                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                                </div>
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Data Pesanan</h6>
                             </div>
-                        </div>
+                            <div class="table-responsive">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th class="text-center">Id Pesanan</th>
+                                            <th class="text-center">Nama Pembeli</th>
+                                            <th class="text-center">Tanggal Pesanan</th>
+                                            <th class="text-center">Status Pesanan</th>
+                                            <th class="text-center">Total</th>
+                                            <th class="text-center" >Aksi</th>
+                                                                                
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if(mysqli_num_rows($query)) {?>
+                                            <?php while($row = mysqli_fetch_array($query)) {?>
+                                        <tr>
+                                            <td class="text-center"><?php echo $row['id_pesanan'] ?></td>
+                                            <td class="text-center"><?php echo $row['nama_lengkap'] ?></td>
+                                            <td class="text-center"><?php echo $row['tanggal_pesanan'] ?></td>
+                                            <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
+                                            <td class="text-center"><?php echo $row['total'] ?></td>
+                                            <div class="d-grid gap-2">
+                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
+                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a></td>
+                                                                     </tr>
+
+                                        
+                                        <?php } ?>
+                                        <?php } ?>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>       
                     </div>
+                </div>
+            </div>
+                            
+                   
                     <!-- <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <iframe class="position-relative rounded w-100 h-100"
@@ -231,28 +262,13 @@
             <!-- Chart End -->
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                    <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Sanggar Batik</a>, Website. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">Kelompok 3</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
+          
         </div>
         <!-- Content End -->
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+      
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

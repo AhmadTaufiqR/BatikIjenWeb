@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SANGGAR BATIK -DASHBOARD</title>
+    <title>SANGGAR BATIK -TOKO SAYA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -45,8 +45,8 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Sanggar Batik</h3>
+                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"></i>Sanggar Batik</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -59,12 +59,12 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
                     </div>
                     <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produk Kami</a>
+                    <a href="tokosaya.php" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Toko Saya</a>
+                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Produk Kami</a>
                     <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
                     <div class="nav-item dropdown">
                     </div>
@@ -78,7 +78,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="dashboard.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="dashboard.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -96,7 +96,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -106,7 +106,7 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -116,7 +116,7 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Jhon send you a message</h6>
                                         <small>15 minutes ago</small>
@@ -159,95 +159,53 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Keluar</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
             <!-- Navbar End -->
-
-
-            <!-- Sale & Revenue Start -->
+            <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
+                <h3>Data Toko</h3>
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Kategori Produk</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Produk Terbaru</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Produk Populer</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-            <!-- Sale & Revenue End -->
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Pesanan Terbaru</h6>
-                        <a href="">Semuanya</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th class="text-center">No.</th>
-                                    <th class="text-center">User</th>
-                                    <th class="text-center">Tanggal Order</th>
-                                    <th class="text-center">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if(mysqli_num_rows($query)) {?>
-                                    <?php while($row = mysqli_fetch_array($query)) {?>
-                                <tr>
-                                    <td class="text-center"><?php echo $row['user'] ?></td>
-                                    <td class="text-center"><?php echo $row['tanggal_order'] ?></td>
-                                    <td class="text-center"><?php echo $row['status'] ?></td>
-                                 </tr>
-                                 <?php } ?>
-                                 <?php } ?>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <form class="row g-3">
+                <div class="col-md-6">
+                <label for="nama_toko" class="form-label">Nama Toko</label>
+                <input type="nama_toko" class="form-control" id="nama_toko">
             </div>
-            <!-- Recent Sales End -->
-
-             <!-- Footer Start -->
-             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Sanggar Batik</a>, Website. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">Kelompok 3</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-6">
+                <label for="pemilik_toko" class="form-label">Pemilik Toko</label>
+                <input type="pemilik_toko" class="form-control" id="pemilik_toko">
             </div>
+            <div class="mb-5">
+               <label for="alamat_toko" class="form-label">Alamat Toko</label>
+               <textarea class="form-control" id="alamat_toko" rows="3"></textarea>
+               <div class="mb-3">
+              <label for="formFile" class="form-label">Gambar Toko</label>
+               <input class="form-control" type="file" id="formFile">
+             </div>
+             <div class="col-md-2">
+                  <label for="no-telepon" class="form-label">Telephone</label>
+                  <input type="no_telepon" class="form-control" id="no_telepon">
+                 </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="simpan" class="btn btn-success " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Submit</button>
+                <button type="hapus" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Cancel</button>
+            </div>
+        </form>
+         </div>
+    </div>
+
+            <!-- Form End -->
+            
+      
+                   
+            <!-- Form End -->
+
+
+            <!-- Footer Start -->
+            
             <!-- Footer End -->
         </div>
         <!-- Content End -->
