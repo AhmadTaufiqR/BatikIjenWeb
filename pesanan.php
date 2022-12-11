@@ -34,6 +34,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -48,33 +49,10 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i></i>Sanggar Batik</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Rizki Farhan</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                <div class="nav-item dropdown">
-                </div>
-                <a href="pesanan.php" class="nav-item nav-link active"><i class="fa fa-table shop me-2"></i>Pesanan</a>
-                <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
-                <a href="produkkami.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Produk Kami</a>
-                <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
+       <?php 
+       $page ="pesanan";
+       include 'include/sidebar.php'
+       ?>
         <!-- Sidebar End -->
 
 
@@ -230,9 +208,13 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                                             <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
                                             <td class="text-center"><?php echo $row['total'] ?></td>
                                             <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a></td>
-                                                                     </tr>
+                                                                        <td>
+                                                                        <a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
+                                                                        <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a>
+                                                                        <!-- <button class="hapus">Third Alert</button> -->
+                                                                    </td>
+                                                                        
+                                                                    </tr>
 
                                         
                                         <?php } ?>
@@ -282,6 +264,45 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="dist/jquery-3.6.1.min.js"></script>
+    <script src="dist/sweetalert2.min.js"></script>
+    <script>
+    // document.querySelector(".hapus").addEventListener("click", function() {
+    // Swal.fire({
+    //     title: "Are you sure about deleting this file?",
+    //     type: "info",
+    //     showCancelButton: true,
+    //     confirmButtonText: "Delete It",
+    //     confirmButtonColor: "#ff0055",
+    //     cancelButtonColor: "#999999",
+
+    //     reverseButtons: true,
+    //     focusConfirm: false,
+    //     focusCancel: true
+    // });
+    // });
+    $('.hapus').on('click', function(e){
+        e.preventDefault();
+        const href = $(this).attr('href')
+
+        Swal.fire({
+        title: "Are you sure about deleting this file?",
+        type: "info",
+        showCancelButton: true,
+        confirmButtonText: "Delete It",
+        confirmButtonColor: "#ff0055",
+        cancelButtonColor: "#999999",
+
+        reverseButtons: true,
+        focusConfirm: false,
+        focusCancel: true
+    }).then((result) => {
+        if(result.value) {
+            document.location.href = href;
+        }
+    })
+    })
+    </script>
 </body>
 
 </html>

@@ -33,6 +33,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -47,33 +48,10 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="dashboard.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i></i>Sanggar Batik</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Rizki Farhan</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="dashboard.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                    <a href="pesanan.php" class="nav-item nav-link"><i class="fa fa-table shop me-2"></i>Pesanan</a>
-                    <a href="tokosaya.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Toko Saya</a>
-                    <a href="produkkami.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Produk Kami</a>
-                    <a href="laporan.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Laporan</a>
-                    <div class="nav-item dropdown">
-                    </div>
-                </div>
-            </nav>
-        </div>
+        <?php 
+        $page = "produk";
+        include 'include/sidebar.php';
+        ?>
         <!-- Sidebar End -->
 
 
@@ -163,7 +141,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="#" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -203,7 +181,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                             <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
                                             <div class="d-grid gap-2">
                                                                         <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
+                                                                        <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
                                                                      </tr>
  
                                         </tr>
@@ -240,6 +218,31 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="dist/jquery-3.6.1.min.js"></script>
+    <script src="dist/sweetalert2.min.js"></script>
+    <script>
+    $('.hapus').on('click', function(e){
+        e.preventDefault();
+        const href = $(this).attr('href')
+
+        Swal.fire({
+        title: "Are you sure about deleting this file?",
+        type: "info",
+        showCancelButton: true,
+        confirmButtonText: "Delete It",
+        confirmButtonColor: "#ff0055",
+        cancelButtonColor: "#999999",
+
+        reverseButtons: true,
+        focusConfirm: false,
+        focusCancel: true
+    }).then((result) => {
+        if(result.value) {
+            document.location.href = href;
+        }
+    })
+    })
+    </script>
 </body>
 
 </html>
