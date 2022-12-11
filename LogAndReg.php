@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <?php
-            if (isset($_GET['pesan'])) {
-            if ($_GET['pesan'] == "gagal") { ?><?php
-            echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
-            }
-           }
-           ?>
+  
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
@@ -15,10 +9,24 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
     <title>Login</title>
   </head>
   <body>
-    
+
+  <?php
+            if (isset($_GET['pesan'])) {
+            if ($_GET['pesan'] == "gagal") {  ?>
+            
+            <script>
+              Swal.fire("Our First Alert", "With some body text and success icon!", "success");
+            </script>
+            <?php
+            
+            // echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
+            }
+           }
+           ?>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
@@ -101,5 +109,11 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="dist/sweetalert2.min.js"></script>
+    <script>
+    document.querySelector(".alert"){
+      Swal.fire("Our First Alert", "With some body text and success icon!", "success");
+    };
+            </script>
   </body>
 </html>

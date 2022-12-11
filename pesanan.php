@@ -34,6 +34,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -207,9 +208,13 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                                             <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
                                             <td class="text-center"><?php echo $row['total'] ?></td>
                                             <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a></td>
-                                                                     </tr>
+                                                                        <td>
+                                                                        <a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
+                                                                        <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a>
+                                                                        <!-- <button class="hapus">Third Alert</button> -->
+                                                                    </td>
+                                                                        
+                                                                    </tr>
 
                                         
                                         <?php } ?>
@@ -259,6 +264,45 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="dist/jquery-3.6.1.min.js"></script>
+    <script src="dist/sweetalert2.min.js"></script>
+    <script>
+    // document.querySelector(".hapus").addEventListener("click", function() {
+    // Swal.fire({
+    //     title: "Are you sure about deleting this file?",
+    //     type: "info",
+    //     showCancelButton: true,
+    //     confirmButtonText: "Delete It",
+    //     confirmButtonColor: "#ff0055",
+    //     cancelButtonColor: "#999999",
+
+    //     reverseButtons: true,
+    //     focusConfirm: false,
+    //     focusCancel: true
+    // });
+    // });
+    $('.hapus').on('click', function(e){
+        e.preventDefault();
+        const href = $(this).attr('href')
+
+        Swal.fire({
+        title: "Are you sure about deleting this file?",
+        type: "info",
+        showCancelButton: true,
+        confirmButtonText: "Delete It",
+        confirmButtonColor: "#ff0055",
+        cancelButtonColor: "#999999",
+
+        reverseButtons: true,
+        focusConfirm: false,
+        focusCancel: true
+    }).then((result) => {
+        if(result.value) {
+            document.location.href = href;
+        }
+    })
+    })
+    </script>
 </body>
 
 </html>
