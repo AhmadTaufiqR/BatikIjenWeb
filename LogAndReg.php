@@ -3,7 +3,7 @@
   <head>
   <?php
             if (isset($_GET['pesan'])) {
-            if ($_GET['pesan'] == "gagal") {
+            if ($_GET['pesan'] == "gagal") { ?><?php
             echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
             }
            }
