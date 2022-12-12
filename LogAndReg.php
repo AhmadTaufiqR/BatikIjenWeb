@@ -23,7 +23,7 @@
       <div class="forms-container">
         <div class="signin-signup">
           
-          <form class="sign-in-form" action="login.php" method="POST">
+          <form class="sign-in-form" action="login.php" method="POST" onsubmit="return submitForm(this);">
             <!-- membuat logo -->
             <!-- <div class="logo">
               <img src="img/Logo_SB.png" alt="Logo" />
@@ -64,6 +64,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-phone"></i>
+              <input type="number" placeholder="No.Telepon" name="telepon"/>
               <input type="no_telepon" placeholder="No.Telepon" name="telepon"/>
             </div>
             <input type="submit" class="btn" value="Register" />
@@ -100,6 +101,22 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script>
+      function submitForm(form) {
+        swal({
+          title: "Are You Sure?",
+          text: "This form will be submitted",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((isOkay)=>{
+          if(isOkay){
+            form.submit();
+          }
+        });
+        return false;
+      }
+    </script>
   </body>
 </html>

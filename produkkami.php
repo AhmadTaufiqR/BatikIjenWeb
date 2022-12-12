@@ -163,7 +163,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                                     <thead>
                                         <tr class="text-dark">
-                                            <th class="text-center">Id Produk</th>
+                                            <th class="text-center">No Produk</th>
                                             <th class="text-center">Nama Produk</th>
                                             <th class="text-center">Stok</th>
                                             <th class="text-center">Harga Produk</th>
@@ -202,9 +202,9 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                             <td class="text-center"><?php echo $row['gambar_produk'] ?></td>
                                             <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
                                             <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
-                                                                     </tr>
+                                            <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
+                                            <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
+                                            </tr>
  
                                         </tr>
                                         <?php } ?>

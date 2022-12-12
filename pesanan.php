@@ -211,7 +211,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                                     <thead>
                                         <tr class="text-dark">
-                                            <th class="text-center">Id Pesanan</th>
+                                            <th class="text-center">No Pesanan</th>
                                             <th class="text-center">Nama Pembeli</th>
                                             <th class="text-center">Tanggal Pesanan</th>
                                             <th class="text-center">Status Pesanan</th>
@@ -230,9 +230,9 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                                             <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
                                             <td class="text-center"><?php echo $row['total'] ?></td>
                                             <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
-                                                                        <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a></td>
-                                                                     </tr>
+                                            <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fun/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
+                                            <a class="btn btn-danger" style="background-color:red; border-color:red;  color: #fff; "href="function/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a></td>
+                                            </tr>
 
                                         
                                         <?php } ?>

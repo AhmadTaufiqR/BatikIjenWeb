@@ -17,6 +17,9 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <!-- SweetAlert -->
+    
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,7 +168,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
                             <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="login.php" class="nav-item nav-link">Log Out</a>
+                            <a href="logout.php" class="dropdown-item" id="logout_sc">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -218,7 +221,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark">
-                                    <th class="text-center">Id Pesanan</th>
+                                    <th class="text-center">No</th>
                                     <th class="text-center">Nama Pembeli</th>
                                     <th class="text-center">Tanggal Pesanan</th>
                                     <th class="text-center">Status Pesanan</th>
@@ -269,6 +272,9 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- SweetAlert -->
+    
 
 </body>
 
