@@ -1,3 +1,8 @@
+<?php
+include 'koneksi.php';
+$query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_lengkap, pesanan.tanggal_pesanan, pesanan.status_pesanan, pesanan.total FROM pesanan JOIN tb_pengguna ON pesanan.id_pengguna = tb_pengguna.id_pengguna where pesanan.status_pesanan = 'selesai';")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +70,7 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-envelope me-lg-2"></i>
                             <span class="d-none d-lg-inline-flex">Pesan</span>
                         </a>
@@ -126,16 +131,15 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item text-center">See all notifications</a>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">Rizki Farhan</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Profil</a>
-                            <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Logout</a>
+                            <a href="profil.php" class="dropdown-item">Profil</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -144,28 +148,46 @@
 
 
             <!-- Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-               
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Laporan Penjualan</h6>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
             <!-- Chart End -->
-
+            <button type="button" class="btn btn-primary m-2" style = "margin-top: 20px"><i class="fa fa-fil me-2"></i><a href ="" style="color: #fff">Unduh File</a></button>
+            <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Data Laporan</h6>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                        <th class="text-center">No.</th>
+                                            <th class="text-center">Nama Pembeli</th>
+                                            <th class="text-center">Tanggal Pesanan</th>
+                                            <th class="text-center">Status Pesanan</th>
+                                            <th class="text-center">Total</th>                                    
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if(mysqli_num_rows($query)) {?>
+                                            <?php while($row = mysqli_fetch_array($query)) {?>
+                                        <tr>
+                                        <td class="text-center"><?php echo $row['id_pesanan'] ?></td>
+                                            <td class="text-center"><?php echo $row['nama_lengkap'] ?></td>
+                                            <td class="text-center"><?php echo $row['tanggal_pesanan'] ?></td>
+                                            <td class="text-center"><?php echo $row['status_pesanan'] ?></td>
+                                            <td class="text-center"><?php echo $row['total'] ?></td>
+                                            <div class="d-grid gap-2">
+                                             
             <!-- Footer Start -->
-           >
+           
             </div>
             <!-- Footer End -->
         </div>
         <!-- Content End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+        
+        <?php } ?>
+                                        <?php } ?>
+                                        </tr>
+                                    </tbody>                  
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

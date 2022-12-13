@@ -71,67 +71,6 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Pesan</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notifikasi</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -139,15 +78,13 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                             <span class="d-none d-lg-inline-flex">Rizki Farhan</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Profil</a>
-                            <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Logout</a>
+                            <a href="profil.php" class="dropdown-item">Profil</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
             </nav>
             <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
-            
                         <div class="container-fluid pt-4 px-4">
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
@@ -157,7 +94,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                                     <thead>
                                         <tr class="text-dark">
-                                            <th class="text-center">No Produk</th>
+                                            <th class="text-center">No.</th>
                                             <th class="text-center">Nama Produk</th>
                                             <th class="text-center">Stok</th>
                                             <th class="text-center">Harga Produk</th>
@@ -180,10 +117,58 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                             <td class="text-center"><?php echo $row['gambar_produk'] ?></td>
                                             <td class="text-center"><?php echo $row['ukuran_produk'] ?></td>
                                             <div class="d-grid gap-2">
-                                                                        <td><a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_produk=<?php echo $row['id_produk'];?>">Edit</a>
-                                                                        <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
-                                                                     </tr>
- 
+                                                        
+                                        <!-- Button trigger modal -->
+                                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Produk</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                <div class="col-md-12">
+                                                <label for="nama_produk" class="form-label">Nama Produk</label>
+                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                            </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                <div class="col-md-12">
+                                                <label for="nama_produk" class="form-label">Harga Produk</label>
+                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                            </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                <div class="col-md-12">
+                                                <label for="nama_produk" class="form-label">Jenis Produk</label>
+                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                            </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                <div class="col-md-12">
+                                                <label for="nama_produk" class="form-label">Gambar Produk</label>
+                                                <input type="file" class="form-control" id="nama_produk">
+                                            </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                <div class="col-md-12">
+                                                <label for="nama_produk" class="form-label">Sizes</label>
+                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                            </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                    <button type="button" class="btn btn-primary">Simpan</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <!-- modal edit end -->
+                                            <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
+                                            </tr>
                                         </tr>
                                         <?php } ?>
                                         <?php } ?>
@@ -217,6 +202,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
+    <!-- swett alert pop up hapus -->
     <script src="js/main.js"></script>
     <script src="dist/jquery-3.6.1.min.js"></script>
     <script src="dist/sweetalert2.min.js"></script>
@@ -224,12 +210,11 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
     $('.hapus').on('click', function(e){
         e.preventDefault();
         const href = $(this).attr('href')
-
         Swal.fire({
-        title: "Are you sure about deleting this file?",
+        title: "Apakah anda yakin ingin menghapus data ini?",
         type: "info",
         showCancelButton: true,
-        confirmButtonText: "Delete It",
+        confirmButtonText: "Hapus",
         confirmButtonColor: "#ff0055",
         cancelButtonColor: "#999999",
 

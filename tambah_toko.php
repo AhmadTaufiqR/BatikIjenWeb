@@ -157,9 +157,8 @@
                             <span class="d-none d-lg-inline-flex">Rizky Farhan</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Profil</a>
-                            <a href="#" class="dropdown-item">Pengaturan</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="profil.php" class="dropdown-item">Profil</a>
+                            <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>
