@@ -189,8 +189,8 @@
                   <input type="no_telepon" class="form-control" id="no_telepon">
                  </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="simpan" class="btn btn-success " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Submit</button>
-                <button type="hapus" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Cancel</button>
+                <button type="simpan" class="btn btn-success " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Simpan</button>
+                <button type="hapus" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" >Batal</button>
             </div>
         </form>
          </div>

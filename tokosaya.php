@@ -141,9 +141,12 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-            <div class="col-md35 col-sm-6 mb-3">
+            <div class="col-md45 col-sm-6 mb-6" style = "margin-left: 260px; margin-top: 50px">
 		<div class="card">
-			<img src="img/profiltoko.jpg" class="card-img-top" alt="...">
+			<img src="img/profiltoko.jpg
+            
+            
+            " class="card-img-top" alt="...">
  
 			<div class="card-body">
 				<div class="card-title"><h4>Batik Katura</h4></div>
@@ -158,7 +161,7 @@
         </div>
         <!-- Content End -->
         <div class="p-2">
-        <a href="tambah_toko.php" class="btn btn-success">+ tambah</a>
+        <a href="tambah_toko.php" class="btn btn-success">+ Tambah</a>
         </div>
         
 
