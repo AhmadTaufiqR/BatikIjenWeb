@@ -24,10 +24,10 @@ if($cek > 0){
 		$_SESSION['email'] = $email;
 		$_SESSION['level'] = "admin";
 		// alihkan ke halaman dashboard admin
-		header("location:dashboard.php");
+		header("location:LogAndReg.php?pesan=berhasil");
 	}else{
 		// alihkan ke halaman login kembali
-		header("location:LogAndReg.php?ada yang salah");
+		header("location:LogAndReg.php?pesan=gagal");
 		
 	}	
 }else{

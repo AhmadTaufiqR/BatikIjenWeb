@@ -140,7 +140,6 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profil</a>
-                            <a href="#" class="dropdown-item">Pengaturan</a>
                             <a href="logout.php" class="dropdown-item">Logout</a>
                         </div>
                     </div>
@@ -189,7 +188,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
                                     <thead>
                                         <tr class="text-dark">
-                                            <th class="text-center">Id Pesanan</th>
+                                            <th class="text-center">No. Pesanan</th>
                                             <th class="text-center">Nama Pembeli</th>
                                             <th class="text-center">Tanggal Pesanan</th>
                                             <th class="text-center">Status Pesanan</th>
@@ -209,7 +208,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                                             <td class="text-center"><?php echo $row['total'] ?></td>
                                             <div class="d-grid gap-2">
                                                                         <td>
-                                                                        <a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Edit</a>
+                                                                        <a class="btn btn-danger" style="background-color:steelblue; border-color:steelblue;  color: #fff; " href="fungsi/edit.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Ubah</a>
                                                                         <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_pesanan=<?php echo $row['id_pesanan'];?>">Hapus</a>
                                                                         <!-- <button class="hapus">Third Alert</button> -->
                                                                     </td>
@@ -286,10 +285,10 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
         const href = $(this).attr('href')
 
         Swal.fire({
-        title: "Are you sure about deleting this file?",
+        title: "Apa anda yakin, ingin menghapus data ini?",
         type: "info",
         showCancelButton: true,
-        confirmButtonText: "Delete It",
+        confirmButtonText: "Hapus",
         confirmButtonColor: "#ff0055",
         cancelButtonColor: "#999999",
 
