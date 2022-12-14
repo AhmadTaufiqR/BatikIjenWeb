@@ -1,3 +1,9 @@
+<?php
+include 'koneksi.php';
+$query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_lengkap, pesanan.tanggal_pesanan, pesanan.status_pesanan, pesanan.total FROM pesanan JOIN tb_pengguna ON pesanan.id_pengguna = tb_pengguna.id_pengguna")
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,7 +140,6 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Profile</a>
-                            <a href="#" class="dropdown-item">Pengaturan</a>
                             <a href="#" class="dropdown-item">Logout</a>
                         </div>
                     </div>
