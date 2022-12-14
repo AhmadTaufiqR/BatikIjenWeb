@@ -1,6 +1,6 @@
 <?php
 include 'koneksi.php';
-$query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_produk ASC ")
+$query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC ")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,12 +153,16 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY tb_produk.id_p
                                                 <input type="file" class="form-control" id="nama_produk">
                                             </div>
                                                 </div>
-                                                <div class="modal-body">
-                                                <div class="col-md-12">
-                                                <label for="nama_produk" class="form-label">Sizes</label>
-                                                <input type="nama_produk" class="form-control" id="nama_produk">
-                                            </div>
-                                                </div>
+                                                <div class="form-group col-md-6" style = "margin-left:20px">
+                                                <label for="inputState">Ukuran Produk</label>
+                                                <select id="inputState" class="form-control">
+                                                <option selected>Pilih</option>
+                                                <option>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                                 <option>XXL</option>
+                                            </select>
+                                            </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                                     <button type="button" class="btn btn-primary">Simpan</button>
