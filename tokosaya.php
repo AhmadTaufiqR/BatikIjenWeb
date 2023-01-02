@@ -60,10 +60,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Cari">
-                </form>
-                </form>
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -141,8 +138,8 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-            <div class="col-md45 col-sm-6 mb-6" style = "margin-left: 260px; margin-top: 50px">
-		<div class="card">
+            <div class="col-md45 col-sm-6 mb-" style = "margin-left: 260px; margin-top: 50px">
+		    <div class="card"  style = "margin-left: 4px; margin-top: 50px">
 			<img src="img/profiltoko.jpg
             
             
@@ -161,7 +158,7 @@
         </div>
         <!-- Content End -->
         <div class="p-2">
-        <a href="tambah_toko.php" class="btn btn-success">+ Tambah</a>
+        <a href="tambah_toko.php" class="btn btn-success"> + Isi Profile Toko</a>
         </div>
         
 

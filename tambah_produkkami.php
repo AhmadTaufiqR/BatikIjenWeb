@@ -165,21 +165,41 @@
             </nav>
             <!-- Navbar End -->
 
+            <?php 
+            include 'koneksi.php';
+            if (isset($_POST["btn_simpan_produk"])) {
+               //ambil data 
+               $nama_produk= $_POST["nama_produk"];
+               $stok= $_POST["stok"];
+               $harga_produk= $_POST["harga_produk"];
+               $kategori=$_POST["kategori"];
+               $gambar_produk= $_POST["gambar"];
+               $rincian_produk=$_POST["rincian_produk"];
+               $ukuran_produk=$_POST["ukuran_produk"];
+               $pekerjaan=$_POST["pekerjaan"];
 
+
+               $query= "INSERT INTO `tb_produk`(`id_produk`, `id_toko`, `nama_produk`, `stok`, `harga_produk`, `jenis_produk`,
+                `gambar_produk`, `rincian_produk`, `ukuran_produk`, `id_kategori`)
+               VALUES ('','','$nama_produk','$stok','$harga_produk','$kategori','$gambar_produk','$rincian_produk','$ukuran_produk','')";
+               mysqli_query($koneksi,$query);
+                # code...
+            }
+            ?>
             <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
                 <h3>Form Produk</h3>
                 <div class="row g-4">
                     
                     
-                            <form class="row g-3">
+                            <form class="row g-3" method="POST">
                                <div class="col-md-6">
                                 <label for="nama_produk" class="form-label">Nama Produk</label>
-                               <input type="nama_produk" class="form-control" id="nama_produk">
+                               <input type="nama_produk" class="form-control" id="nama_produk" name="nama_produk">
                                 </div>
                                   <div class="col-md-6">
                                    <label for="stok" class="form-label">Stok</label>
-                                      <input type="number" class="form-control" id="stok">
+                                      <input type="number" class="form-control" id="stok" name="stok">
                                 </div>
                                 <!-- <div class="card-body">
                                     <label for="inputPassword">Harga Produk</label>
@@ -188,28 +208,28 @@
                                     </div> -->
                                     <div class="col-md-6">
                                    <label for="harga_produk" class="form-label">Harga Produk</label>
-                                      <input type="text" class="form-control" id="harga_produk">
+                                      <input type="text" class="form-control" id="harga_produk" name="harga_produk">
                                 </div>
                                 <div class="col-md-6">
                                    <label for="kategori" class="form-label">Kategori</label>
-                                      <input type="text" class="form-control" id="kategori">
+                                      <input type="text" class="form-control" id="kategori" name="kategori">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="nama_produk" class="form-label">Gambar produk</label>
-                               <input type="file" class="form-control" id="gambar_produk">
+                               <input type="file" class="form-control" id="gambar_produk" name="gambar">
                                 </div>
                                   <div class="col-md-12">
                                   <label for="inputPassword">Rincian Produk</label>
                                     <div class="col-sm-15">
                                       <div class="form-floating">
-                                    <textarea class="form-control" id="rincian_produk"></textarea>
+                                    <textarea class="form-control" name="rincian_produk" id="rincian_produk"></textarea>
                                  <label for="floatingTextarea">Rincian Produk</label>
                                 </div>
                                 </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputState">Ukuran Produk</label>
-                                    <select id="inputState" class="form-control">
+                                    <select id="inputState" class="form-control" name="ukuran_produk">
                                         <option selected>Pilih</option>
                                         <option>M</option>
                                         <option>L</option>
@@ -219,7 +239,7 @@
                                     </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputState">Pekerjaan</label>
-                                    <select id="inputState" class="form-control">
+                                    <select id="inputState" class="form-control" name="pekerjaan">
                                         <option selected>Pilih</option>
                                         <option>Polisi</option>
                                         <option>Tentara</option>
@@ -231,7 +251,7 @@
                                     </div>
                                 <div class="modal-footer">
                                     <button type="reset" class="btn btn-denger">RESET</button>
-                                    <input type="submit" class="btn btn-success" name="tambah" value="SIMPAN">
+                                    <input type="submit" class="btn btn-success" name="btn_simpan_produk" value="SIMPAN">
                                 </div>
                                 </form>
                                 <?php

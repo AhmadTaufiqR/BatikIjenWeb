@@ -29,8 +29,8 @@ $query = mysqli_query($koneksi, "SELECT * from tb_pengguna ORDER BY tb_pengguna.
             Selamat datang di halaman profil...
 
             <div>
-                Hello <b>Janzen</b>
-                <a href="#" class="link-warning text-decoration-none fw-bold ms-2">
+                Hello <b>Rizki Farhan</b>
+                <a href="dashboard.php" class="link-warning text-decoration-none fw-bold ms-2">
                     <i class="fa-solid fa-sign-out"></i>
                     Keluar Dashboard
                 </a>
@@ -59,9 +59,9 @@ $query = mysqli_query($koneksi, "SELECT * from tb_pengguna ORDER BY tb_pengguna.
 
                             <img src="https://avatars.githubusercontent.com/u/45115034?v=4" alt="Profil Picture" class="img img-thumbnail rounded-circle w-50">
 
-                            <h2>Janzen Faidiban</h2>
+                            <h2>Rizki Farhan</h2>
                           <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Profil </button>
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -111,7 +111,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_pengguna ORDER BY tb_pengguna.
                                 <p class="card-text">
                                     <span class="text-muted mb-1 d-block">Alamat Email</span>
 
-                                    <i class="fa-solid fa-envelope me-2 text-primary"></i> janzenfaidiban@gmail.com
+                                    <i class="fa-solid fa-envelope me-2 text-primary"></i> rizki.farhan@gmail.com
 
                                 </p> <!-- alamat email end -->
 
@@ -182,7 +182,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_pengguna ORDER BY tb_pengguna.
     <!-- FOOTER START -->
     <footer class="text-center bg-dark text-primary py-5">
         <p>
-            Copyright &copy; 2022. Designed by <b>Janzen Faidiban</b>
+        Politeknik Negeri Jember Designed by <b>TIF 21 Bondowoso Kelompok 3</b>
         </p>
     </footer>
     <!-- FOOTER END -->
