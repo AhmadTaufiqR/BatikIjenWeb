@@ -19,13 +19,20 @@ var_dump($cek);
 if($cek > 0){
 	$data = mysqli_fetch_assoc($login);
 	// cek jika user login sebagai admin
-	if($data['level']=="admin"){
+	if($data['level']=="admin" && $data['email_verified_at'] !="null"){
 		// buat session login dan email 
 		$_SESSION['email'] = $email;
 		$_SESSION['level'] = "admin";
+		
 		// alihkan ke halaman dashboard admin
 		header("location:LogAndReg.php?pesan=berhasil");
-	}else{
+	}elseif($data['level']=="admin" && $data['email_verified_at'] =="null"){
+		$_SESSION['email'] = $email;
+		$_SESSION['level'] = "admin";
+
+		header("location:LogAndReg.php?pesan=verified");
+	}
+	else{
 		// alihkan ke halaman login kembali
 		header("location:LogAndReg.php?pesan=gagal");
 		

@@ -1,7 +1,4 @@
-<?php
-include 'koneksi.php';
-$query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC ")
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,9 +63,25 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC 
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Cari">
+                <form class="d-none d-md-flex ms-4" method="GET" action="produkkami.php">
+                    <input class="form-control border-0" type="text" value="<?php if (isset($_GET['cariProduk'])) {
+                                                                                echo $_GET['cariProduk'];
+                                                                            } ?>" name="cariProduk" autocomplete="off" placeholder="Cari...">
+                    <button class="btn btn-light " type="submit" id="tombol-cari">Search</button>
                 </form>
+                <?php
+                include 'koneksi.php';
+                if (isset($_GET['cariProduk'])) {
+
+                    $pencarianProduk = $_GET['cariProduk'];
+
+                    $query =  mysqli_query($koneksi, "SELECT * from tb_produk  WHERE nama_produk LIKE '%$pencarianProduk%' ORDER BY id_produk ASC");
+                    # code...
+                } else {
+                    $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC");
+                }
+
+                ?>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                     </div>
@@ -84,11 +97,12 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC 
                     </div>
                 </div>
             </nav>
-            <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
+            
                         <div class="container-fluid pt-4 px-4">
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Data Produk</h6>
+                                <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-1"></i><a href ="tambah_produkkami.php" style="color: #fff">Tambah Produk</a></button>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -106,7 +120,7 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php if(mysqli_num_rows($query)) {?>
+                                        
                                             <?php while($row = mysqli_fetch_array($query)) {?>
                                         <tr>
                                             <td class="text-center"><?php echo $row['id_produk'] ?></td>
@@ -122,8 +136,11 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC 
                                         <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
 
                                             <!-- Modal -->
+                                       
                                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
+                                            <form action="function/editproduk.php" method="POST">
+                                            <input type="hidden" name="no_produk" value="<?php echo $row['id_produk'] ?>">
                                                 <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Edit Produk</h5>
@@ -132,50 +149,53 @@ $query = mysqli_query($koneksi, "SELECT * from tb_produk ORDER BY id_produk ASC 
                                                 <div class="modal-body">
                                                 <div class="col-md-12">
                                                 <label for="nama_produk" class="form-label">Nama Produk</label>
-                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                                <input type="nama_produk" class="form-control" id="nama_produk" value="<?php echo $row['nama_produk'] ?>" name="nama_produk">
                                             </div>
                                                 </div>
                                                 <div class="modal-body">
                                                 <div class="col-md-12">
                                                 <label for="nama_produk" class="form-label">Harga Produk</label>
-                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                                <input type="nama_produk" class="form-control" id="nama_produk" value="<?php echo $row['harga_produk'] ?>" name="harga_produk">
                                             </div>
                                                 </div>
                                                 <div class="modal-body">
                                                 <div class="col-md-12">
                                                 <label for="nama_produk" class="form-label">Jenis Produk</label>
-                                                <input type="nama_produk" class="form-control" id="nama_produk">
+                                                <input type="nama_produk" class="form-control" id="nama_produk" value="<?php echo $row['jenis_produk'] ?>" name="jenis_produk">
                                             </div>
                                                 </div>
                                                 <div class="modal-body">
                                                 <div class="col-md-12">
                                                 <label for="nama_produk" class="form-label">Gambar Produk</label>
-                                                <input type="file" class="form-control" id="nama_produk">
+                                                <input type="file" class="form-control" id="nama_produk" name="uploudgambarproduk" value="<?php echo $row['gambar_produk'] ?>">
                                             </div>
                                                 </div>
                                                 <div class="form-group col-md-6" style = "margin-left:20px">
                                                 <label for="inputState">Ukuran Produk</label>
-                                                <select id="inputState" class="form-control">
-                                                <option selected>Pilih</option>
-                                                <option>M</option>
-                                                <option>L</option>
-                                                <option>XL</option>
-                                                 <option>XXL</option>
+                                                <select id="inputState" class="form-control" name="pilihukuran">
+                                                <option  selected value="<?php echo $row['ukuran_produk'] ?>">Pilih</option>
+                                                <option value="M">M</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                 <option value="XXL">XXL</option>
                                             </select>
                                             </div>
                                                 <div class="modal-footer">
+                                                
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                    <button type="button" class="btn btn-primary">Simpan</button>
+                                                    <button type="submit" class="btn btn-primary" name="bubahproduk">Simpan</button>
                                                 </div>
                                                 </div>
+                                                </form>
                                             </div>
                                             </div>
+                                        
                                             <!-- modal edit end -->
-                                            <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; "href="fungsi/hapus.php?id_produk=<?php echo $row['id_produk'];?>">Hapus</a></td>
+                                            <a class="btn btn-danger hapus" style="background-color:red; border-color:red;  color: #fff; " name=" btn_hapus" href="function/hapusproduk.php?id_produk=<?php echo $row['id_produk']; ?>">Hapus</a>
                                             </tr>
                                         </tr>
                                         <?php } ?>
-                                        <?php } ?>
+                                    
                                         </tr>
                                     </tbody>
 

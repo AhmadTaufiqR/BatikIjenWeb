@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -89,217 +89,234 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> -->
-                            <!-- <i class="fa fa-envelope me-lg-2"></i> -->
-                            <!-- <span class="d-none d-lg-inline-flex">Pesan</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <img class="rounded-circle me-lg-2" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
+                                <span class="d-none d-lg-inline-flex">Rizky Farhan z</span>
                             </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/testimonial-1.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                <a href="profil.php" class="dropdown-item">Profil</a>
+                                <a href="logout.php" class="dropdown-item">Logout</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notifikasi</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div> -->
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/fotoprofil.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Rizky Farhan z</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="profil.php" class="dropdown-item">Profil</a>
-                            <a href="logout.php" class="dropdown-item">Logout</a>
-                        </div>
-                    </div>
-                </div>
             </nav>
             <!-- Navbar End -->
 
+            <?php
+            include 'koneksi.php';
+            if (isset($_POST["btn_simpan_produk"])) {
+                //ambil data 
+                $nama_produk = $_POST["nama_produk"];
+                $stok = $_POST["stok"];
+                $harga_produk = $_POST["harga_produk"];
+                $rincian_produk = $_POST["rincian_produk"];
+                $ukuranProduk = $_POST["ukuran_produk"];
+                
 
+                $gambar = uploud();
+
+                if (!$gambar) {
+                    return false;
+                }
+
+                $query = "INSERT INTO `tb_produk` (`id_produk`, `id_toko`, `nama_produk`, `stok`, `harga_produk`, `jenis_produk`, `gambar_produk`, `rincian_produk`, `ukuran_produk`, `id_kategori`) 
+                VALUES ('', '3', '$nama_produk', '$stok', '$harga_produk', 'Kain Batik', '$gambar', '$rincian_produk', '$ukuranProduk', '2');";
+
+                if (mysqli_query($koneksi, $query) > 0) {
+                ?><div class="popup popup--icon -success js_success-popup popup--visible">
+                        <div class="popup__background"></div>
+                        <div class="popup__content">
+                            <h3 class="popup__content__title">
+                                Success
+                            </h3>
+                            <p>Anda Berhasil Menambahkan Produk Baru</p>
+                            <p>
+                                <button class="button button--valid" data-for="js_error-popup"><a style="color:white;" href="produkkami.php">Ok </button></a>
+                                <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
+                                <?php echo "<script>setTimeout(\"location.href = 'produkkami.php';\",2000);</script>"; ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php } else {
+                ?><div class="popup popup--icon -error js_error-popup popup--visible">
+                        <div class="popup__background"></div>
+                        <div class="popup__content">
+                            <h3 class="popup__content__title">
+                                Success
+                            </h3>
+                            <p>Anda Gagal Menambahkan Produk Baru</p>
+                            <p>
+                                <button class="button button--error" data-for="js_error-popup"><a style="color:white;" href="tambah_produkkami.php">Ok </button></a>
+                                <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
+                                <?php echo "<script>setTimeout(\"location.href = 'tambah_produkkami.php';\",2000);</script>"; ?>
+                            </p>
+                        </div>
+                    </div>
+            <?php
+                }
+            }
+
+            function uploud()
+            {
+                $namaFile = $_FILES['gambar_produk']['name'];
+                $ukuranFile = $_FILES['gambar_produk']['size'];
+                $error = $_FILES['gambar_produk']['error'];
+                $tmpName = $_FILES['gambar_produk']['tmp_name'];
+                //cek file gambar dimasukkan atau belum
+                if ($error === 4) {
+                    echo "<script>
+                    alert('Pilih gambar terlebih dahhulu!');
+                    </script>
+                    <script>setTimeout(\"location.href = tambah_produkkami.php';\",2000);</script>";
+                    # code...
+                    return false;
+                }
+                //cek tipe file
+                $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+                $ekstensiGambar = explode('.', $namaFile);
+                $ekstensiGambar = strtolower(end($ekstensiGambar));
+                if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+                    echo "<script>
+                alert('File yang anda uploud bukan file gambar');
+                </script>
+                <script>setTimeout(\"location.href = 'tambah_produkkami.php';\",2000);</script>";
+                    # code...
+                    return false;
+                }
+                //cek ukuran
+                if ($ukuranFile > 1000000) {
+                    echo "<script>
+                alert('Ukuran gambar terlalu besar');
+                </script>
+                <script>setTimeout(\"location.href = 'tambah_produkkami.php';\",2000);</script>";
+                    # code...
+                    return false;
+                }
+                $namaFileBaru = uniqid();
+                $namaFileBaru .= '.';
+                $namaFileBaru .= $ekstensiGambar;
+
+
+                move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+                return $namaFileBaru;
+            }
+
+            ?>
             <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
                 <h3>Form Produk</h3>
                 <div class="row g-4">
-                    
-                    
-                            <form class="row g-3">
-                               <div class="col-md-6">
-                                <label for="nama_produk" class="form-label">Nama Produk</label>
-                               <input type="nama_produk" class="form-control" id="nama_produk">
-                                </div>
-                                  <div class="col-md-6">
-                                   <label for="stok" class="form-label">Stok</label>
-                                      <input type="number" class="form-control" id="stok">
-                                </div>
-                                <!-- <div class="card-body">
-                                    <label for="inputPassword">Harga Produk</label>
-                                    <div class="col-sm-15">
-                                        <input type="harga_produk" class="form-control" id="harga_produk">
-                                    </div> -->
-                                    <div class="col-md-6">
-                                   <label for="harga_produk" class="form-label">Harga Produk</label>
-                                      <input type="text" class="form-control" id="harga_produk">
-                                </div>
-                                <div class="col-md-6">
-                                   <label for="kategori" class="form-label">Kategori</label>
-                                      <input type="text" class="form-control" id="kategori">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="nama_produk" class="form-label">Gambar produk</label>
-                               <input type="file" class="form-control" id="gambar_produk">
-                                </div>
-                                  <div class="col-md-12">
-                                  <label for="inputPassword">Rincian Produk</label>
-                                    <div class="col-sm-15">
-                                      <div class="form-floating">
-                                    <textarea class="form-control" id="rincian_produk"></textarea>
-                                 <label for="floatingTextarea">Rincian Produk</label>
-                                </div>
-                                </div>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputState">Ukuran Produk</label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Pilih</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                        <option>XXL</option>
-                                    </select>
-                                    </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputState">Pekerjaan</label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Pilih</option>
-                                        <option>Polisi</option>
-                                        <option>Tentara</option>
-                                        <option>PNS</option>
-                                        <option>Dokter</option>
-                                        <option>Pramugari</option>
-                                        <option>UMUM</option>
-                                    </select>
-                                    </div>
-                                <div class="modal-footer">
-                                    <button type="reset" class="btn btn-denger">RESET</button>
-                                    <input type="submit" class="btn btn-success" name="tambah" value="SIMPAN">
-                                </div>
-                                </form>
-                                <?php
-                                // require_once('koneksi.php');
-                                // $image = $_FILES['path_gambar']['name'];
-                                // $name = $_POST['id_toko'];
-                                // $name = $_POST['nama_produk'];
-                                // $name = $_POST['stok'];
-                                // $name = $_POST['harga_produk'];
-                                // $name = $_POST['jenis_produk'];
-                                // $name = $_POST['rincian_produk'];
-                                // $name = $_POST['ukuran_produk'];
-                                // $name = $_POST['harga_produk'];
-                                // $name = $_POST['id_kategori'];
-
-                                // $imagePath = 'uploads/' . $image;
-                                // $tmp_name = $_FILES['path_gambar']['tmp_name'];
-
-                                // move_uploaded_file($tmp_name, $imagePath);
-
-                                // $connection->query("insert into user(path_gambar, name) values('" . $image . "', '" . $name . "')");
-                                // ?>
-                                <?php
-                                // if(@$_POST['tambah']) {
-                                //     $nama_produk = $connection->conn->real_eacape_string($_POST['nama_produk']);
-                                //     $stok = $connection->conn->real_eacape_string($_POST['stok']);
-                                //     $harga_produk = $connection->conn->real_eacape_string($_POST['harga_produk']);
-                                //     $jenis_produk = $connection->conn->real_eacape_string($_POST['jenis_produk']);
-
-                                    // $extensi = explode(".". $_FILES['gambar_barang']['name']);
-                                    // $gambar_produk = "gambar".round(microtime(true)).".".end($extensi);
-                                    // $sumber = $_FILES['gambar_produk']['tmp_name'];
-                                    // $upload = move_uploaded_file($sumber, "img/produk.".$gambar_produk)
-                                    // if($upload){
-                                    //     $gambar_produk->
-                                    // } else{
-                                    //     echo "<script>alert('upload gambar gagal')</script>";
-                                    // }
-                                    // $gambar_produk = $connection->conn->real_eacape_string($_POST['gambar_produk']);
-                                    // $rincian_produk = $connection->conn->real_eacape_string($_POST['rincian_produk']);
-                                    // $ukuran_produk = $connection->conn->real_eacape_string($_POST['ukuran_produk']);
-                                // }
-                                // ?>
-                             </div>
-                                 </div>
-                    
-            <!-- Form End -->
 
 
-            <!-- Footer Start -->
-            
-            <!-- Footer End -->
+                    <form class="row g-3" action="" method="POST" enctype="multipart/form-data">
+                        <div class="col-md-6">
+                            <label for="nama_produk" class="form-label">Nama Produk</label>
+                            <input type="nama_produk" class="form-control" id="nama_produk" name="nama_produk">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="stok" class="form-label">Stok</label>
+                            <input type="number" class="form-control" id="stok" name="stok">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="harga_produk" class="form-label">Harga Produk</label>
+                            <input type="text" class="form-control" id="harga_produk" name="harga_produk" placeholder="Rp.">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="kategori" class="form-label">Kategori</label>
+                            <input type="text" class="form-control" id="kategori" name="kategori">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="nama_produk" class="form-label">Gambar produk</label>
+                            <input type="file" class="form-control" id="formFile" name="gambar_produk" placeholder="jpg,jpeg,png">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Rincian Produk</label>
+                            <div class="col-sm-15">
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="rincian_produk" id="rincian_produk"></textarea>
+                                    <label for="floatingTextarea">Rincian Produk</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Ukuran Produk</label>
+                            <select id="inputState" class="form-control" name="ukuran_produk">
+                                <option selected>Pilih</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                                
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Pekerjaan</label>
+                            <select id="inputState" class="form-control" name="pekerjaan">
+                                <option selected>Pilih</option>
+                                <option>Polisi</option>
+                                <option>Tentara</option>
+                                <option>PNS</option>
+                                <option>Dokter</option>
+                                <option>Pramugari</option>
+                                <option>UMUM</option>
+                            </select>
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <a href="produkkami.php" button type="text" class="btn btn-danger"> Batal</a>
+                            <a href="tambah_produkkami.php" button type="text" class="btn btn-secondary"> Reset</a>
+                            <button type="simpan" class="btn btn-success " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" name="btn_simpan_produk" id="btn_simpan">Simpan</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
-        <!-- Content End -->
+
+
+    </div>
+    <!-- Form End -->
+
+
+    <!-- Footer Start -->
+
+    <!-- Footer End -->
+    </div>
+    <!-- Content End -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/chart/chart.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="app.js"></script>
+        <script src="dist/jquery-3.6.1.min.js"></script>
+        <script src="dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="dist/sweetalert2.min.css">
+        <link rel="stylesheet" href="popup.css">
+        <script>
+            // document.querySelector(".alert"){
+            //   Swal.fire("Our First Alert", "With some body text and success icon!", "success");
+            // };
+            $('#alert').on(
+                function() {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Login Berhasil',
+                        text: 'anda berhasil login'
+                    })
+                }
+            )
+        </script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
 </body>
 
 </html>
