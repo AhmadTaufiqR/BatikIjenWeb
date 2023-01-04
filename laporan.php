@@ -65,9 +65,7 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Cari">
-                </form>
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -86,11 +84,12 @@ $query = mysqli_query($koneksi, "SELECT pesanan.id_pesanan, tb_pengguna.nama_len
 
             <!-- Chart Start -->
             <!-- Chart End -->
-            <button type="button" class="btn btn-primary m-2" style = "margin-top: 20px"><i class="fa fa-fil me-2"></i><a href ="" style="color: #fff">Unduh File</a></button>
+            
             <div class="container-fluid pt-4 px-4">
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Data Laporan</h6>
+                                <button type="button" class="btn btn-primary m-2" style = "margin-top: 20px"><a href ="exportlaporan.php" style="color: #fff">Export File</a></button>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">

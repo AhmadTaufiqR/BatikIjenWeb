@@ -102,7 +102,7 @@
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Data Produk</h6>
-                                <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-2"></i><a href ="tambah_produkkami.php" style="color: #fff">TAMBAH PRODUK</a></button>
+                                <button type="button" class="btn btn-primary m-2"><i class="fa fa-plus me-1"></i><a href ="tambah_produkkami.php" style="color: #fff">Tambah Produk</a></button>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">

@@ -84,9 +84,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Cari">
-                </form>
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <div class="nav-item dropdown">
@@ -234,7 +232,7 @@
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button type="simpan" class="btn btn-success " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" name="btn_simpan" id="btn_simpan">Simpan</button>
-                                    <button type="hapus" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" href="../tokosaya.php">Batal</button>
+                                    <button type="hapus" class="btn btn-danger " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .10rem; --bs-btn-font-size: .75rem;" href="tokosaya.php">Batal</button>
                                 </div>
                     </form>
                 </div>
